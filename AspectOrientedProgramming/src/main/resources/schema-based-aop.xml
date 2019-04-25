@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE beans PUBLIC "-//SPRING/DTD BEAN/EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+  <aop:config>
+    <aop:aspect id="myAspect" ref="aBean">
+    </aop:aspect>
+  </aop:config>
+  <bean id="aBean" class="schema.based.aop.Abean" />
+  <aop:config>
+    <aop:pointcut id="myPointcut" expression="execution(* com.xyz.myapp.service.*.*(..))" />
+  </aop:config>
+  <aop:config>
+    <aop:aspect id="MyAspect1" ref="aBean">
+      <aop:pointcut id="myPointcut1" expression="execution(* com.xyz.myapp.service.*.*(..))"
+    </aop:aspect>
+  </aop:config>
+  <aop:config>
+    <aop:aspect id="myAspect2" ref="aBean">
+      <aop:pointcut id="myPointcut2" expression="execution(* com.xyz.myapp.service.*.*(..)) &amp;&amp; this(service)" />
+      <aop:before pointcut-ref="myPointcut2" method="monitor"/>
+    </aop:aspect>
+  </aop:config>
+  <aop:config>
+    <aop:aspect id="myAspect3" ref="aBean">
+      <aop:before pointcut-ref="dataAccessOperation" method="doAccessCheck" />
+    </aop:aspect>
+  </aop:config>
+  <aop:config>
+    <aop:aspect id="afterReturningExample" ref="aBean">
+      <aop:after-returing pointcut-ref="" method="" />
+    </aop:aspect>
+  </aop:config>
+  <aop:config>
+     <aop:aspect id="afterReturningExample" ref="aBean">
+       <aop:after-returning pointcut-ref="doAccessData" returning="retVal" method="doAccessCheck" />
+     </aop:aspect>
+  </aop:config>
+  <aop:config>
+    <aop:aspect id="afterThrowingExample" ref="aBean">
+      <aop:after-throwing pointcut-ref="dataAccessOperation" method="doRecoveryActions" throwing="exception" />
+    </aop:aspect>
+  </aop:config>
+  <aop:config>
+    <aop:aspect id="afterFinallyExample" ref="aBean">
+      <aop:after pointcut-ref="dataAccessOperation" method="doReleaseLock"
+    </aop:aspect>
+  </aop:config>
+  <aop:config>
+    <aop:aspect id="aroundExample" ref="aBean">
+      <aop:around pointcut-ref="" method="" /> 
+    </aop:aspect>
+  </aop:config>
+</beans>

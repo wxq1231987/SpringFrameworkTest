@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+  <aop:config>
+    <aop:aspect>
+      <aop:declare-parents types-matching="schema.based.aop.StudentAdditional+"
+                           implement-interface="schema.based.aop.Student"
+                           delegate-ref="student" />
+    </aop:aspect>
+  </aop:config>
+  <bean id="student" class="schema.based.aop.StudentImpl">
+    <property name="studentNo" value="20134703" />
+    <property name="studentName" value="王旭琴" />
+  </bean>
+  <bean id="studentAdditional" class="schema.based.aop.StudentAdditionalImpl">
+    <property name="city" value="上海" />
+    <property name="country" value="中国" />
+  </bean>
+</beans>

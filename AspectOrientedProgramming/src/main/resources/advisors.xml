@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+  <aop:config>
+    <aop:pointcut expression="" id=""/>
+    <aop:advisor pointcut-ref="" advice-ref=""/>
+  </aop:config>
+  <tx:advice id="">
+    <tx:attributes>
+      <tx:method name="" propagation="" />
+    </tx:attributes>
+  </tx:advice>
+
+  <bean id="concurrentOperaionExecutor" class="com.xyz.myapp.service.impl.ConcurrentOperationExecutor">
+    <property name="maxRetries" value="3" />
+    <property name="order" value="100" />
+  </bean>
+
+  <aop:config>
+    <aop:aspect id="concurrentOperationRetry" ref="concurrentOperaionExecutor">
+      <aop:pointcut expression="" id=""/>
+      <aop:around pointcut-ref="" method="doConcurrentOperation" />
+    </aop:aspect>
+  </aop:config>
+</beans>

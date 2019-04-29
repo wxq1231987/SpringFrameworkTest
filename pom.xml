@@ -8,5 +8,6 @@
   <description>Spring框架练习</description>
   <modules>
     <module>AspectOrientedProgramming</module>
+    <module>common</module>
   </modules>
 </project>

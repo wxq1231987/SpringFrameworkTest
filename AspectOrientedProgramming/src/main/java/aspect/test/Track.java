@@ -1,5 +1,10 @@
 package aspect.test;
 
+import java.util.Arrays;
+
+import org.springframework.stereotype.Component;
+
+@Component
 public class Track {
     private String name;
     private String author;
@@ -29,5 +34,10 @@ public class Track {
     }
     public void setAudio(byte[] audio) {
         this.audio = audio;
+    }
+
+    @Override
+    public String toString() {
+        return "Track [name=" + name + ", author=" + author + ", audio=" + Arrays.toString(audio) + "]";
     }
 }

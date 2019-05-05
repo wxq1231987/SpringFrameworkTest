@@ -11,4 +11,7 @@ public class Dancer implements Performance {
         System.out.println("Begin to dance, dance's name is " + track.getName()
          + "dancer is " + track.getAuthor());
     }
+    public Track getTrack() {
+        return track;
+    }
 }

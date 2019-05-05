@@ -17,6 +17,13 @@ public class Track {
         this.audio = new byte[100];
     }
 
+    public Track(String name, String author, byte[] audio) {
+        super();
+        this.name = name;
+        this.author = author;
+        this.audio = audio;
+    }
+
     public String getName() {
         return name;
     }

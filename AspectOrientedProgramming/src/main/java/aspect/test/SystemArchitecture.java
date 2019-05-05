@@ -20,9 +20,25 @@ public class SystemArchitecture {
     public void getTrackPoint() {
         
     }
+    @Pointcut("execution(* aspect.test.*.introduce(..))")
+    public void introducePoint() {
+        
+    }
+    @Pointcut("execution(* aspect.test.*.showGratitude(..))")
+    public void gratitudePoint() {
+        
+    }
+    @Before("introducePoint() && args(account)")
+    public void beforeIntroduce(Account account) {
+        System.out.println(account.getName() + "开始自我介绍");
+    }
     @Before("dancePoint()")
     public void beforeDance() {
         //System.out.println("开始入座");
+    }
+    @Before("gratitudePoint() && args(track, account)")
+    public void beforeGratitude(Track track, Account account) {
+        System.out.println(track.getName() + "表演完毕");
     }
     @After("dancePoint()")
     public void afterDance() {

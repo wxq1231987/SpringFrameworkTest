@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="product" class="instatiation.by.staticfactory.ProductFactory"
+        factory-method="createProduct"></bean>
+
+    <bean id="clientService" class="instatiation.by.staticfactory.ClientService"
+        factory-method="createClientService">
+    </bean>
+
+</beans>

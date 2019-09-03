@@ -7,7 +7,8 @@
   <name>SpringFrameworkTest</name>
   <description>Spring框架练习</description>
   <modules>
-    <module>AspectOrientedProgramming</module>
-    <module>common</module>
+  	<module>AspectOrientedProgramming</module>
+  	<module>common</module>
+  	<module>springioc</module>
   </modules>
 </project>

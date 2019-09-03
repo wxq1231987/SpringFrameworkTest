@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 动态工厂 -->
+    <bean id="factory" class="instatiation.by.instancefactory.DefaultServiceLocator"></bean>
+    <!-- 实例 -->
+    <bean id="clientService" factory-bean="factory" factory-method="createClientService" />
+    <bean id="accountService" factory-bean="factory" factory-method="createAccountService" />
+
+</beans>

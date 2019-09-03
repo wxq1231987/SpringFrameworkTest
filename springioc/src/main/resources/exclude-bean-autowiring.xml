@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd"
+        >
+
+    <bean id="steelAxe1" class="dependency.inject.excludeautowiring.SteelAxe">
+        <property name="name" value="Jane"/>
+    </bean>
+    <bean id="steelAxe2" class="dependency.inject.excludeautowiring.SteelAxe" autowire-candidate="false">
+        <property name="name" value="Rose"/>
+    </bean>
+    <bean id="chinese" class="dependency.inject.excludeautowiring.Chinese" autowire="byType"/>
+
+</beans>

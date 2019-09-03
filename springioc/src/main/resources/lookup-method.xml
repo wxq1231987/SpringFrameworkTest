@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="pizza" class="dependency.inject.lookupmethod.Pizza" scope="prototype"/>
+    <bean id="veggiePizza" class="dependency.inject.lookupmethod.Pizza" scope="prototype">
+        <property name="veggie" value="true"/>
+    </bean>
+
+    <bean id="pizzaShop" class="dependency.inject.lookupmethod.PizzaShop">
+        <lookup-method name="makePizza" bean="pizza"/>
+        <lookup-method name="makeVeggiePizza" bean="veggiePizza"/>
+    </bean>
+</beans>

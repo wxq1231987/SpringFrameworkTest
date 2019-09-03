@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="anotherBean" class="dependency.inject.compound.AnotherBean"/>
+    <bean id="yetAnotherBean" class="dependency.inject.compound.YetAnotherBean"/>
+   <!--  <bean id="exampleBean" class="dependency.inject.compound.ExampleBean">
+        <property name="anotherBean">
+            <ref bean="anotherBean"/>
+        </property>
+        <property name="anotherBean">
+             <ref bean="anotherBean"/>
+        </property>
+        <property name="yetAnotherBean" ref="yetAnotherBean"/>
+        <property name="i" value="12"/>
+    </bean>
+    
+    
+    <bean id="exampleBean2" class="dependency.inject.compound.ExampleBean">
+        <constructor-arg>
+            <ref bean="anotherBean"/>
+        </constructor-arg>
+        <constructor-arg ref="yetAnotherBean"/>
+        <constructor-arg name="i" value="12"/>
+    </bean> -->
+
+    <bean id="exampleBean3" class="dependency.inject.compound.ExampleBean"
+        factory-method="createExampleBean">
+        <constructor-arg>
+            <ref bean="anotherBean"/>
+        </constructor-arg>
+        <constructor-arg ref="yetAnotherBean"/>
+        <constructor-arg value="12"/>
+    </bean>
+</beans>

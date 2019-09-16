@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+
+    <bean id="person" class="annotation.based.config.Person">
+        <property name="name" value="Jack"/>
+        <property name="age" value="18"/>
+    </bean>
+    <bean id="dog" class="annotation.based.config.Dog">
+        <property name="type" value="泰迪"/>
+    </bean>
+
+    <bean id="movieRecommender" class="annotation.based.config.MovieRecommender">
+    </bean>
+    <bean id="customerPreferenceDao" class="annotation.based.config.CustomerPreferenceDao"></bean>
+
+    <bean id="movieRecommender2" class="annotation.based.config.MovieRecommender2">
+    </bean>
+    <bean id="movieCatalog" class="annotation.based.config.MovieCatalog">
+    </bean>
+
+    <bean id="movieRecommender3" class="annotation.based.config.MovieRecommender3"></bean>
+
+    <bean id="movieRecommender4" class="annotation.based.config.MovieRecommender4">
+    </bean>
+    <bean id="movie1" class="annotation.based.config.Movie">
+        <property name="name" value="影"/>
+        <property name="author" value="张艺谋"/>
+    </bean>
+    <bean id="movie2" class="annotation.based.config.Movie">
+        <property name="name" value="唐老鸭"/>
+        <property name="author" value="迪士尼"/>
+    </bean>
+    <bean id="movie3" class="annotation.based.config.Movie">
+        <property name="name" value="冰雪之歌"/>
+        <property name="author" value="克里斯汀"/>
+    </bean>
+
+    <bean id="movieRecommender5" class="annotation.based.config.MovieRecommender5"></bean>
+    
+    <context:component-scan base-package="annotation.based.config.primary"/>
+</beans>

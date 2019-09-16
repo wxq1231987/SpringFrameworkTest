@@ -3,10 +3,8 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="lifeCycleDemo" class="startup.and.shutdown.callback.HelloWordLifeCycle">
+
+    <bean id="exampleBean" class="container.extension.points.ExampleBean" init-method="init">
     </bean>
-    <bean id="lifeCycleDemo2" class="startup.and.shutdown.callback.HelloWordLifeCycle2">
-    </bean>
-    <bean id="lifeCycleDemo3" class="startup.and.shutdown.callback.HelloWordLifeCycle3">
-    </bean>
+
 </beans>

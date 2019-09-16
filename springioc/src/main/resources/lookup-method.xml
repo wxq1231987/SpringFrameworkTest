@@ -4,11 +4,17 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="pizza" class="dependency.inject.lookupmethod.Pizza" scope="prototype"/>
+    <!-- <bean id="pizza" class="dependency.inject.lookupmethod.Pizza" scope="prototype"/>
     <bean id="veggiePizza" class="dependency.inject.lookupmethod.Pizza" scope="prototype">
         <property name="veggie" value="true"/>
     </bean>
 
+    <bean id="pizzaShop" class="dependency.inject.lookupmethod.PizzaShop">
+        <lookup-method name="makePizza" bean="pizza"/>
+        <lookup-method name="makeVeggiePizza" bean="veggiePizza"/>
+    </bean> -->
+    <bean id="pizza" class="" scope="prototype"/>
+    <bean id="veggiePizza" class="" scope="prototype"/>
     <bean id="pizzaShop" class="dependency.inject.lookupmethod.PizzaShop">
         <lookup-method name="makePizza" bean="pizza"/>
         <lookup-method name="makeVeggiePizza" bean="veggiePizza"/>
